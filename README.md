@@ -14,6 +14,10 @@ pip install -r requirements.txt
 
 ### Demo
 
+- Download the [pretrained weight](https://drive.google.com/open?id=14DsUrAgjjHZ_WiMQ2WFez22QD5-nR7gu)
+
+- Set the "model_path" in demo.sh to the path of pretrained weight
+
 - Put some pedestrian images to ```example_results/input```
 
 - Run demo.sh
