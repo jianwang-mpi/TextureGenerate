@@ -1,6 +1,6 @@
-## Re-ID Supervised 3D Texture Generation
+## Re-ID Supervised Texture Generation
 
-This is the internal code repo for 3D Texture Generation.
+This is the code repo for the paper Re-Identification Supervised Texture Generation (CVPR2019) [[PDF]](https://arxiv.org/pdf/1904.03385v1.pdf).
 
 ### Requirement
 
@@ -32,3 +32,17 @@ bash demo.sh
 ### Train
 
 TODO
+
+### Citation
+
+----------------
+If you use this code for your research, please cite our paper.
+
+```bibtex
+@article{wang2019reidsupervised,
+  title={Re-Identification Supervised Texture Generation},
+  author={Jian, Wang and Yunshan, Zhong and Yachun, Li and Chi, Zhang and Yichen, Wei},
+  journal={IEEE Conference on Computer Vision and Pattern Recognition},
+  year={2019}
+}
+```
