@@ -24,7 +24,7 @@ pip install -r requirements.txt
 ```bash
 bash demo.sh
 ```
-- Get UV map from ```example_results/texture```
+- Get the resulting textures from ```example_results/texture```
 
 - Render the 3D human model with texture using our another repo:
 [BlenderRender](https://github.com/yt4766269/BlenderRender)
