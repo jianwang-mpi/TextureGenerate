@@ -34,6 +34,7 @@ class Demo:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Show generated image')
+    parser.add_argument('--gpu', '-g')
     parser.add_argument('--img', '-i')
     parser.add_argument('--model', '-m', default='model_path')
     parser.add_argument('--out', '-o', default=None)
