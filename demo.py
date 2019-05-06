@@ -9,13 +9,12 @@ class Demo:
     def __init__(self, model_path):
         print(model_path)
 
-        self.model = torch.load(model_path)
+        self.model = torch.load(model_path, map_location='cpu')
         self.model.eval()
 
     def generate_texture(self, img_path):
         img = cv2.imread(img_path)
 
-        print(img.shape)
 
         img = cv2.resize(img, (64, 128))
         img = (img / 225. - 0.5) * 2.0
@@ -45,7 +44,7 @@ if __name__ == '__main__':
     model_path = args.model
 
     torch.nn.Module.dump_patches = True
-    
+
     demo = Demo(model_path)
 
     print(img_path)
@@ -53,10 +52,10 @@ if __name__ == '__main__':
         for root, dir, names in os.walk(img_path):
             for name in names:
                 full_path = os.path.join(img_path, name)
-                print(full_path)
+                print('executing: ', full_path)
                 out = demo.generate_texture(img_path=full_path)
 
-                print('out path', os.path.join(out_path, name))
+                print('finish: ', os.path.join(out_path, name))
                 cv2.imwrite(os.path.join(out_path, name), out)
     else:
         out = demo.generate_texture(img_path=img_path)
