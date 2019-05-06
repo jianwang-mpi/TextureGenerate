@@ -5,6 +5,19 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
+class Interpolate(nn.Module):
+    def __init__(self, scale, mode, align_corners=False):
+        super(Interpolate, self).__init__()
+        self.interp = nn.functional.interpolate
+        self.scale = scale
+        self.mode = mode
+        self.align_corners = align_corners
+
+    def forward(self, x):
+        x = self.interp(x, scale_factor=self.scale, mode=self.mode, align_corners=self.align_corners)
+        return x
+
+
 class double_conv(nn.Module):
     '''(conv => BN => ReLU) * 2'''
 
@@ -54,7 +67,8 @@ class up(nn.Module):
         #  would be a nice idea if the upsampling could be learned too,
         #  but my machine do not have enough memory to handle all those weights
         if bilinear:
-            self.up = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
+            # self.up = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
+            self.up = Interpolate(scale=2, mode='bilinear', align_corners=True)
         else:
             self.up = nn.ConvTranspose2d(in_ch // 2, in_ch // 2, 2, stride=2)
 
