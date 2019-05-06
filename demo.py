@@ -9,7 +9,7 @@ class Demo:
     def __init__(self, model_path):
         print(model_path)
 
-        self.model = torch.load(model_path).cuda()
+        self.model = torch.load(model_path)
         self.model.eval()
 
     def generate_texture(self, img_path):
@@ -43,7 +43,6 @@ if __name__ == '__main__':
     img_path = args.img
     out_path = args.out
     model_path = args.model
-    torch.cuda.device(int(args.gpu))
     demo = Demo(model_path)
 
     print(img_path)
