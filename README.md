@@ -31,7 +31,20 @@ bash demo.sh
 
 ### Train
 
-TODO
+1. Download datasets:
+    - market-1501
+    - SURREAL
+    - CUHK-SYSU (for background)
+    - PRW (for background)
+
+1. Generate the rendering tensors with [RenderingTensorGenerator](https://github.com/yt4766269/RenderingTensorGenerator).
+
+2. Set all paths and parameters in config.py
+
+3. start train 
+```bash
+bash train.sh
+```
 
 ### Citation
 
