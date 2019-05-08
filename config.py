@@ -9,37 +9,35 @@ from absl import flags
 # ------------------------------modify this to your own data path--------------------------------------------
 # path of pretrained re-id weight network
 flags.DEFINE_string('reid_weight_path',
-                    '/unsullied/sharefs/zhongyunshan/isilon-home/model-parameters/PCB/checkpoint_120.pth.tar',
+                    '/home/wangj/Models/TextureGeneration/reid_models/checkpoint_120.pth.tar',
                     'weight path for reid')
 
 flags.DEFINE_string('market1501_dir',
-                    '/unsullied/sharefs/wangjian02/isilon-home/datasets/Market1501/data',
+                    '/home/wangj/Datasets/market1501',
                     'directory of market1501 dataset')
 
-
 flags.DEFINE_string('surreal_texture_path',
-                    '/unsullied/sharefs/wangjian02/isilon-home/datasets/SURREAL/textures',
+                    '/home/wangj/Datasets/SURREAL/smpl_data/textures',
                     'surreal texture dataset')
 
 flags.DEFINE_string('CUHK_SYSU_path',
-                    '/unsullied/sharefs/wangjian02/isilon-home/datasets/CUHK-SYSU',
+                    '/home/wangj/Datasets/CUHK-SYSU',
                     'CUHK SYSU dataset')
 
 flags.DEFINE_string('PRW_img_path',
-                    '/unsullied/sharefs/zhongyunshan/isilon-home/datasets/Texture/PRW/frames',
+                    '/home/wangj/Datasets/PRW/frames',
                     'prw dataset raw frame path')
 
-
 flags.DEFINE_string('market1501_render_tensor_dir',
-                    '/unsullied/sharefs/zhongyunshan/isilon-home/datasets/Texture/market-pose/',
+                    '/home/wangj/Datasets/Texture/market1501_rendering_matrix_new',
                     'directory of rendering tensor of market1501')
 
 # -----------------------finish setting dataset path---------------------------------------------------------
 
 # -----------------------Start Setting Model Logging Path------------------------------------------------
-flags.DEFINE_string('model_log_path', '/unsullied/sharefs/wangjian02/isilon-home/logs/test/models',
+flags.DEFINE_string('model_log_path', '/home/wangj/Models/TextureGeneration/model_log',
                     'model save path')
-flags.DEFINE_string('runs_log_path', '/unsullied/sharefs/wangjian02/isilon-home/logs/test/runs',
+flags.DEFINE_string('runs_log_path', '/home/wangj/Models/TextureGeneration/runs_log',
                     'run log save path')
 # -----------------------Finish Setting Model Logging Path-----------------------------------
 
