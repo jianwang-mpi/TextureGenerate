@@ -39,6 +39,8 @@ bash demo.sh
 
 1. Generate the rendering tensors with [RenderingTensorGenerator](https://github.com/yt4766269/RenderingTensorGenerator).
 
+1. Get the pretrained [re-id network](https://drive.google.com/open?id=1XM1bXm029xVJy2sek1Bun96fTACo7c_Q).
+
 2. Set all paths and parameters in config.py
 
 3. start train 
