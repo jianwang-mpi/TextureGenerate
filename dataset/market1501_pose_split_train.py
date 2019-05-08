@@ -101,8 +101,7 @@ class Market1501Dataset(object):
         dataset = []
         for img_path in img_paths:
 
-            img_name = img_path[67:]
-            img_name = img_name[img_name.find('/') + 1:]
+            img_name = osp.split(img_path)[1]
             pose_path = osp.join(pose_dir_path, img_name + '.npy')
 
             pid, camid = map(int, pattern.search(img_path).groups())
