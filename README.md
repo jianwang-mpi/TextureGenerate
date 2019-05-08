@@ -4,8 +4,8 @@ This is the code repo for the paper Re-Identification Supervised Texture Generat
 
 ### Requirement
 
-- Python 3.6+
-- Pytorch 0.4.1+
+- Python 3.6
+- Pytorch 0.4.1
 
 Install other python packages via:
 ```bash
