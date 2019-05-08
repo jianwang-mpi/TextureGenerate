@@ -332,19 +332,19 @@ class TextureReID:
                             continue
 
                         log_value('face loss', config.face_loss_weight * running_face_loss, step=count)
-                        log_value('triplet feature loss', config.reid_triplet_loss_weight * running_triL1_loss,
-                                  step=count)
-                        log_value('softmax feature loss', config.reid_softmax_loss_weight * running_softmax_loss,
-                                  step=count)
-                        log_value('triplet hard loss', config.reid_triplet_hard_loss_weight * running_tri_hard_loss,
-                                  step=count)
-                        log_value('triplet loss loss', config.reid_triplet_loss_not_feature_weight * running_tri_loss,
-                                  step=count)
+                        # log_value('triplet feature loss', config.reid_triplet_loss_weight * running_triL1_loss,
+                        #           step=count)
+                        # log_value('softmax feature loss', config.reid_softmax_loss_weight * running_softmax_loss,
+                        #           step=count)
+                        # log_value('triplet hard loss', config.reid_triplet_hard_loss_weight * running_tri_hard_loss,
+                        #           step=count)
+                        # log_value('triplet loss loss', config.reid_triplet_loss_not_feature_weight * running_tri_loss,
+                        #           step=count)
                         log_value('perceptual loss', config.perceptual_loss_weight * running_perLoss_loss, step=count)
-                        log_value('uvmap l2 loss', config.uvmap_intern_loss_weight * running_uvmap_l2_loss, step=count)
-                        log_value('fake and true loss', config.fake_and_true_loss_weight * running_fake_and_true_loss,
-                                  step=count)
-                        log_value('generator total loss', running_generator_total_loss, step=count)
+                        # log_value('uvmap l2 loss', config.uvmap_intern_loss_weight * running_uvmap_l2_loss, step=count)
+                        # log_value('fake and true loss', config.fake_and_true_loss_weight * running_fake_and_true_loss,
+                        #           step=count)
+                        # log_value('generator total loss', running_generator_total_loss, step=count)
 
                         running_face_loss = 0.0
                         running_triL1_loss = 0.0
@@ -357,17 +357,17 @@ class TextureReID:
                         running_generator_total_loss = 0.0
 
                     print(
-                        'Epoch {}, iter {}, face loss: {}, triplet feature loss: {}, softmax loss: {}, triplet hard loss {}, triplet loss {}, perceptual loss {}, uvmap l2 loss {}, fake and true loss {}'.format(
+                        'Epoch {}, iter {}, face loss: {}, perceptual loss {}'.format(
                             str(epoch),
                             str(i),
                             config.face_loss_weight * face_loss.item(),
-                            config.reid_triplet_loss_weight * triple_feature_loss.item(),
-                            config.reid_softmax_loss_weight * softmax_feature_loss.item(),
-                            config.reid_triplet_hard_loss_weight * triple_hard_loss.item(),
-                            config.reid_triplet_loss_not_feature_weight * triple_loss.item(),
+                            # config.reid_triplet_loss_weight * triple_feature_loss.item(),
+                            # config.reid_softmax_loss_weight * softmax_feature_loss.item(),
+                            # config.reid_triplet_hard_loss_weight * triple_hard_loss.item(),
+                            # config.reid_triplet_loss_not_feature_weight * triple_loss.item(),
                             config.perceptual_loss_weight * perceptual_loss.item(),
-                            config.uvmap_intern_loss_weight * uvmap_l2_loss.item(),
-                            config.fake_and_true_loss_weight * fake_and_true_loss.item()
+                            # config.uvmap_intern_loss_weight * uvmap_l2_loss.item(),
+                            # config.fake_and_true_loss_weight * fake_and_true_loss.item()
                         ))
                 # one epoch save once!
             torch.save(self.generator,
