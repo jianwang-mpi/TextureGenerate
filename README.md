@@ -46,6 +46,8 @@ bash demo.sh
 bash train.sh
 ```
 
+4. you will get the trained models in ```model_log_path```
+
 ### Citation
 
 ----------------
