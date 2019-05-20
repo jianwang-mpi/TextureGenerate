@@ -26,7 +26,7 @@ bash demo.sh
 ```
 - Get the resulting textures from ```example_results/texture```
 
-- Render the 3D human model with texture using our another repo:
+- Render the 3D human model with texture using:
 [BlenderRender](https://github.com/yt4766269/BlenderRender)
 
 ### Train
